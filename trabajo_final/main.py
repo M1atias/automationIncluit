@@ -6,6 +6,7 @@ def opciones():
                    "2- Verificar justificación de mov \n"
                    "3- Imprimir transacciones mayor a $100.000\n"
                    "4- Sumar los montos de todas las transacciones de tipo consumo\n"
+                   "5- Agregar transaccion\n"
                    "0- Salir\n"
                    "Ingrese opción: "))
     return op
@@ -37,6 +38,18 @@ def main():
                 if t.tipo_mov == 'CONSUMO':
                     total +=t.monto_mov
             print('El monto total es: $', total)
+
+        # Este opción se plantea en el curso la ultima clase
+        elif opcion == 5:
+            dni = int(input("Ingrese DNI del cliente: "))
+            tipo_mov = input("Ingrese el tipo de movimiento:")
+            monto = float(input("Ingrese el monto de la transaccion: "))
+            estado = input("Ingrese estado: ")
+            local = input("Ingrese el nombre del comercio: ")
+
+            transaccion = Transaccion(dni,tipo_mov,monto,estado,local)
+            transacciones.append(transaccion)
+
         opcion = opciones()
 
 
