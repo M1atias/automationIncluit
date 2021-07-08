@@ -24,6 +24,9 @@ def main():
         if opcion == 1:
             for transaccion in transacciones:
                 print(transaccion)
+        elif opcion == 2:
+            for transaccion in transacciones:
+                print(transaccion.verificar_mov())
         opcion = opciones()
 
 
