@@ -22,11 +22,21 @@ def main():
 
     while opcion != 0:
         if opcion == 1:
-            for transaccion in transacciones:
-                print(transaccion)
+            for t in transacciones:
+                print(t)
         elif opcion == 2:
-            for transaccion in transacciones:
-                print(transaccion.verificar_mov())
+            for t in transacciones:
+                print(t.verificar_mov())
+        elif opcion == 3:
+            for t in transacciones:
+                if t.monto_mov > 100000:
+                    print(t)
+        elif opcion == 4:
+            total = 0
+            for t in transacciones:
+                if t.tipo_mov == 'CONSUMO':
+                    total +=t.monto_mov
+            print('El monto total es: $', total)
         opcion = opciones()
 
 

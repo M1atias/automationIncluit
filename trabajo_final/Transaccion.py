@@ -18,9 +18,17 @@ class Transaccion:
 
 
     def __str__(self):
-        return f"Transacción: [_id: {self.__transaccion_id}," \
-               f"dni:{self.__dni_cliente}," \
-               f"tipo_movimiento: {self.__tipo_movimiento}" \
-               f"monto_movimiento:{self.__monto_movimiento}" \
-               f"estado: {self.__estado}," \
+        return f"Transacción: [_id: {self.__transaccion_id}, " \
+               f"dni:{self.__dni_cliente}, " \
+               f"tipo_movimiento: {self.__tipo_movimiento}, " \
+               f"monto_movimiento: ${self.__monto_movimiento}, " \
+               f"estado: {self.__estado}, " \
                f"nombre_comercio: {self.__nombre_comercio}]"
+
+    @property
+    def monto_mov (self):
+        return self.__monto_movimiento
+
+    @property
+    def tipo_mov(self):
+        return self.__tipo_movimiento
